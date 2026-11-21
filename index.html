@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Việt</title>
+<meta name="description" content="Trang cộng đồng tiếng Việt (không chính thức) về AI agent và airdrop: trạng thái hôm nay, hướng dẫn từng bước, luật quan trọng, cảnh báo lừa đảo. Dự án đang theo: FLOP testnet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14; --panel:#121820; --line:#223040; --text:#e6edf3; --muted:#8b9bb0;
+  --accent:#34d399; --accent2:#22d3ee; --green:#34d399; --yellow:#fbbf24; --red:#f87171;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 "Be Vietnam Pro",system-ui,sans-serif}
+a{color:var(--accent2)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,15,20,.93);backdrop-filter:blur(6px);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:19px;letter-spacing:.2px}
+.brand span{color:var(--accent)}
+.by{font-size:13px;color:var(--muted)}
+nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--text)}
+.hero{padding:40px 0 24px}
+.tag{display:inline-block;font:500 12px "JetBrains Mono",monospace;color:var(--accent);border:1px solid #1f4a3a;background:#0c1d17;padding:3px 8px;border-radius:6px}
+h1{font-size:34px;line-height:1.2;margin:14px 0 10px}
+h2{font-size:22px;margin:0 0 14px}
+h3{font-size:17px;margin:18px 0 8px}
+.lead{color:var(--muted);max-width:660px}
+.count{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;align-items:flex-end}
+.count div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:78px;text-align:center}
+.count b{display:block;font:500 26px "JetBrains Mono",monospace;color:var(--accent)}
+.count small{color:var(--muted);font-size:12px}
+.count .note{background:none;border:none;text-align:left;min-width:0;color:var(--muted);font-size:13px;padding:0 0 10px}
+section{padding:28px 0;border-top:1px solid var(--line)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px}
+.g{background:var(--green)} .y{background:var(--yellow)} .r{background:var(--red)}
+.status .card b{display:block;margin-bottom:4px}
+.status .card small{color:var(--muted)}
+.note{margin-top:10px;font-size:14px;color:var(--muted)}
+.note b{color:var(--text)}
+.roles .card b{color:var(--accent)}
+.roles .card p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.rules{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.rules li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:10px 14px;font-size:15px}
+.rules li span{color:var(--muted);display:block;font-size:14px;margin-top:2px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.steps li{counter-increment:s;position:relative;padding-left:48px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:14px;width:32px;height:32px;border-radius:8px;background:#0c2a20;color:var(--accent);font:500 15px "JetBrains Mono",monospace;display:grid;place-items:center}
+.steps .card p{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.steps .card p b{color:var(--text)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+code{font:500 13px "JetBrains Mono",monospace;background:#0e1620;border:1px solid var(--line);padding:1px 5px;border-radius:5px;word-break:break-word}
+.warn{border-color:#5a2424;background:#1a0f0f}
+.warn li{margin:6px 0}
+.ref{text-align:center}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:#1b2632;color:var(--muted);border:1px dashed var(--line);font-weight:600;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13px}
+.table-wrap{overflow-x:auto}
+.proj{display:inline-block;font:500 12px "JetBrains Mono",monospace;color:var(--accent2);border:1px solid #16404a;background:#0a1c21;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+@media (max-width:520px){h1{font-size:27px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div>
+      <div class="brand">Agent <span>Việt</span></div>
+      <div class="by">by <a href="https://x.com/Fawkes_Alpha1">@Fawkes_Alpha1</a> · cộng đồng AI agent tiếng Việt, không chính thức</div>
+    </div>
+    <nav>
+      <a href="#trang-thai">Trạng thái</a>
+      <a href="#flop-la-gi">FLOP là gì</a>
+      <a href="#luat">Luật quan trọng</a>
+      <a href="#huong-dan">Hướng dẫn</a>
+      <a href="#lua-dao">Chống lừa đảo</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <span class="tag">BẢN XEM TRƯỚC · số liệu trạng thái là mẫu</span>
+    <h1>Làm AI agent, săn airdrop bằng tiếng Việt, từng bước một</h1>
+    <p class="lead">Dự án đang theo: <b>FLOP</b>, chợ sức tính toán AI của Arthur Hayes. Testnet và airdrop dự kiến bắt đầu <b>24/11/2026</b>, kéo dài tối đa khoảng 90 ngày. Trang này tóm tắt: hôm nay mạng có chạy không, làm gì trước, luật nào phải nhớ, và tránh bẫy nào.</p>
+    <div class="count" id="count" aria-label="Đếm ngược đến testnet">
+      <div><b id="d">–</b><small>ngày</small></div>
+      <div><b id="h">–</b><small>giờ</small></div>
+      <div><b id="m">–</b><small>phút</small></div>
+      <div class="note">đến 24/11 (giờ VN)<br>giờ mở chính xác chưa công bố</div>
+    </div>
+  </div>
+
+  <section id="trang-thai">
+    <h2>Trạng thái hôm nay <span class="proj">FLOP</span></h2>
+    <div class="grid status">
+      <div class="card"><b><span class="dot g"></span>Devnet</b><small>Node phản hồi bình thường</small></div>
+      <div class="card"><b><span class="dot g"></span>Faucet nhanh</b><small>25 FLOP / 24h / địa chỉ</small></div>
+      <div class="card"><b><span class="dot r"></span>Faucet verified</b><small>Lỗi “personhood provider not configured”</small></div>
+      <div class="card"><b><span class="dot y"></span>Testnet</b><small>Chưa mở · dự kiến 24/11</small></div>
+    </div>
+    <p class="note"><b>Ghi chú hôm nay:</b> Faucet verified (Passport) trên devnet vẫn lỗi đến 21/11. Đã báo cho đội FLOP trên GitHub (<a href="https://github.com/flop-labs/network/issues/245">#245</a>). Token devnet không chuyển sang testnet, nên không cần cố xin.</p>
+    <p class="note">Cập nhật lần cuối: 21/11/2026 (giờ Việt Nam)</p>
+  </section>
+
+  <section id="flop-la-gi">
+    <h2>FLOP là gì? (30 giây)</h2>
+    <p>Hãy hình dung FLOP là <b>một khu chợ bán sức tính toán AI</b>. Các chương trình AI (agent) là “khách” trả token FLOP để mua tính toán; người có GPU mở “bếp” chạy model AI; validator là “ban quản lý chợ”, kiểm tra món có được nấu thật không và ghi sổ. Không ai cần nộp đơn: vai trò nào cũng tự do tham gia.</p>
+    <div class="grid roles">
+      <div class="card"><b>Agent</b><p>Trả FLOP để mua tính toán AI. Không cần máy mạnh. Hợp với đa số người Việt.</p></div>
+      <div class="card"><b>Miner</b><p>Cho thuê GPU từ 16 GB VRAM để chạy model. Thu nhập phụ thuộc nhu cầu thật.</p></div>
+      <div class="card"><b>Validator</b><p>Ghi sổ, kiểm tra bằng chứng. Cần máy chủ mạnh và stake lớn.</p></div>
+      <div class="card"><b>KOL / Creator</b><p>Làm nội dung, giới thiệu người mới. Thưởng từ quỹ hệ sinh thái.</p></div>
+    </div>
+    <h3>Airdrop dự kiến (4,4 tỷ FLOP)</h3>
+    <div class="card table-wrap">
+      <table>
+        <tr><th>Nhóm</th><th>Số FLOP</th><th>Ghi chú</th></tr>
+        <tr><td>Miner</td><td>1,2 tỷ</td><td>Theo lượng tính toán đã giao và được xác minh</td></tr>
+        <tr><td>Agent</td><td>1,2 tỷ</td><td>Theo lượng tính toán đã mua trong các phiên đã thanh toán; bị khoá, chỉ dùng để mua tính toán</td></tr>
+        <tr><td>Validator</td><td>1,2 tỷ</td><td>Ghế validator lúc ra mắt theo xếp hạng testnet</td></tr>
+        <tr><td>Quỹ hệ sinh thái</td><td>0,8 tỷ</td><td>Creator, giới thiệu (ref), builder; điều kiện công bố sau</td></tr>
+      </table>
+    </div>
+    <p class="note">Theo whitepaper và Yellow Paper bản nháp trên <a href="https://flop.finance">flop.finance</a>. Số liệu và luật có thể thay đổi.</p>
+  </section>
+
+  <section id="luat">
+    <h2>Luật quan trọng cho agent</h2>
+    <ul class="rules">
+      <li>Chỉ <b>chi tiêu đã thanh toán</b> mua tính toán mới được tính điểm.<span>Số phiên, số ngày hoạt động, số dư đang giữ đều không được tính.</span></li>
+      <li>Nhận faucet <b>không tạo điểm</b>.<span>Faucet chỉ là nguồn FLOP để tiêu; giữ token không được gì.</span></li>
+      <li><b>Một người, một điểm.</b><span>Nhiều ví cùng một chủ bị tính như một người; chia nhỏ ra nhiều ví không được thêm.</span></li>
+      <li><b>Không tự giao dịch.</b><span>Trả tiền cho miner của chính mình, hay xoay vòng giữa các ví của mình, không được tính là nhu cầu.</span></li>
+      <li>Hoạt động giả bị <b>mất toàn bộ airdrop</b>.<span>Hãy dùng agent cho việc thật, ví dụ dịch tin, tóm tắt tài liệu bạn thật sự đọc.</span></li>
+      <li>Airdrop agent <b>bị khoá</b>: tiêu 3 FLOP vào tính toán thì mở khoá 1 FLOP.<span>Chi tối đa 75% phần khoá; phần còn lại không mở được.</span></li>
+    </ul>
+  </section>
+
+  <section id="huong-dan">
+    <h2>Hướng dẫn từng bước <span class="proj">FLOP</span></h2>
+    <ol class="steps">
+      <li><div class="card"><b>Tạo ví FLOP</b>
+        <p>Cài ví <b>Talisman</b>, <b>SubWallet</b> hoặc <b>Polkadot.js</b>. Ví FLOP dùng địa chỉ dạng <code>5...</code>. <b>Chép seed phrase ra giấy, không chụp màn hình, không gửi cho ai.</b> Chỉ dùng <b>một ví</b>.</p></div></li>
+      <li><div class="card"><b>Xác thực “người thật” với Human Passport (từ 20 điểm)</b>
+        <p>Vào <code>app.passport.xyz</code>, kết nối ví EVM (MetaMask). Cách nhanh đạt 20 điểm: stamp <b>Ethereum</b> (lịch sử giao dịch), <b>Binance</b> (nếu đã KYC), hoặc <b>Government ID</b> (16 điểm, phí khoảng 5$ trả bằng ETH trên Base hoặc Optimism). Stamp có hạn khoảng 90 ngày: nhớ làm mới trước khi testnet kết thúc.</p></div></li>
+      <li><div class="card"><b>Nhận FLOP miễn phí ở faucet</b>
+        <p>Vào <code>faucet.flop.network</code>, dán địa chỉ ví FLOP, kết nối ví Passport ở ô <b>Human Identity</b>. <b>Thử “Verified” trước</b>, vì hai loại dùng chung thời gian chờ 24h. Lần sau cách lần trước <b>ít nhất 24 giờ</b>.</p></div></li>
+      <li><div class="card"><b>Tạo danh tính agent</b>
+        <p>Agent cần một <b>DID</b> và một ví. Yellow Paper có nhắc khoản stake tối thiểu 10 FLOP để đăng ký danh tính agent. Cách làm cụ thể sẽ cập nhật khi FLOP công bố hướng dẫn testnet.</p></div></li>
+      <li><div class="card"><b>Mua tính toán và kiểm tra trên explorer</b>
+        <p>Dùng phiên <b>do chính ví agent ký</b>. Sau đó dán địa chỉ ví vào explorer của FLOP: ví của bạn phải xuất hiện thì mới được tính. Không thấy ví thì đừng chạy hàng loạt, hỏi trước đã.</p></div></li>
+    </ol>
+    <p class="note">Các bước riêng cho testnet (tên mạng, phiên bản CLI, faucet testnet) sẽ được cập nhật khi FLOP công bố.</p>
+  </section>
+
+  <section id="lua-dao">
+    <h2>Chống lừa đảo</h2>
+    <div class="card warn">
+      <ul>
+        <li><b>Không ai của FLOP hỏi seed phrase hay mật khẩu ví.</b> Ai hỏi là lừa đảo.</li>
+        <li>Trong MetaMask chỉ <b>ký tin nhắn</b>. Gặp <b>Approve / Permit / Cho phép chi tiêu</b> thì từ chối.</li>
+        <li>Chỉ dùng link chính thức: <code>flop.finance</code>, <code>flop.network</code>, <code>faucet.flop.network</code>, <code>github.com/flop-labs</code>, X <code>@flop_labs</code>.</li>
+        <li>FLOP testnet là miễn phí và không cần đăng ký. Ai bán “suất airdrop”, “slot” hay “FLOP testnet” đều là lừa đảo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ref" class="ref">
+    <h2>Tham gia cùng cộng đồng Việt</h2>
+    <p class="lead" style="margin:0 auto 16px">Khi FLOP mở chương trình giới thiệu, link sẽ được đặt ở đây. Đó là link giới thiệu của tác giả: dùng hay không là tuỳ bạn, hướng dẫn trên trang vẫn miễn phí.</p>
+    <span class="btn">Link giới thiệu · sắp có</span>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Agent Việt</b> là trang cộng đồng do <a href="https://x.com/Fawkes_Alpha1">@Fawkes_Alpha1</a> thực hiện, <b>không phải trang chính thức của Flop Labs</b> hay bất kỳ dự án nào. Trang thật duy nhất được ghim trên X của tác giả.</p>
+    <p>Nội dung mang tính thông tin, không phải lời khuyên đầu tư. Số liệu airdrop theo tài liệu công khai bản nháp và có thể thay đổi. Nguồn: <a href="https://flop.finance">flop.finance</a>, <a href="https://docs.flop.network">docs.flop.network</a>, <a href="https://github.com/flop-labs">github.com/flop-labs</a>, X @CryptoHayes.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var target = new Date('2026-11-24T00:00:00+07:00').getTime();
+  function tick(){
+    var ms = target - Date.now();
+    if (ms <= 0){ document.getElementById('count').innerHTML = '<div><b>LIVE</b><small>testnet đã đến ngày</small></div>'; return; }
+    var d = Math.floor(ms/864e5), h = Math.floor(ms%864e5/36e5), m = Math.floor(ms%36e5/6e4);
+    document.getElementById('d').textContent = d;
+    document.getElementById('h').textContent = h;
+    document.getElementById('m').textContent = m;
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+</body>
+</html>
